@@ -10,7 +10,7 @@ I would like this known that I don't know how to play the actual game of blackja
 
 ## Features I want to add
 
-- [] Hitting "Deal Card" will generate a new card from the deck.
-- [] A deck is dynamically created each game and shuffled before the user draws their card.
-- [] The user can see what their current total is that they have before saying "hit me".
-- [] A way to track progress, like how many wins / losses you have.
+- [ ] Hitting "Deal Card" will generate a new card from the deck.
+- [ ] A deck is dynamically created each game and shuffled before the user draws their card.
+- [ ] The user can see what their current total is that they have before saying "hit me".
+- [ ] A way to track progress, like how many wins / losses you have.
