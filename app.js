@@ -15,12 +15,44 @@ for (let value in values) {
 shuffleDeck(deck);
 
 // Functionality for the "Draw Card" button
-const dealButton = document.querySelector(".deal");
+const DEALBUTTON = document.querySelector(".deal");
 
-dealButton.addEventListener("click", () => {
+DEALBUTTON.addEventListener("click", () => {
     // Grab the top card from the deck
+    let currentCardValue = deck[0][0];
+    let currentCardSuit = deck[0][1];
+
     // Remove the top card from the deck
+    deck.shift();
+
     // Display the top card from the deck
+    const CARD = document.querySelector(".card");
+    const CARDSUIT_VALUE = document.querySelectorAll(".card__suit-value");
+    const CARDSUIT_SUIT = document.querySelectorAll(".card__suit-suit img");
+    const CARDVALUE = document.querySelector(".card__value");
+
+    // Change the center card value;
+    CARDVALUE.innerText = currentCardValue;
+
+    // Change the value of the left and right values;
+    CARDSUIT_VALUE.forEach((value, index) => {
+        value.innerText = currentCardValue;
+    })
+
+    // Change the suit of the left and right values;
+    CARDSUIT_SUIT.forEach((suit, index) => {
+        suit.src = `assets/${currentCardSuit}.png`;
+    })
+
+    // Add corresponding color class to the card
+    if ( currentCardSuit == "spade" || currentCardSuit == "club") {
+        CARD.classList.add("black");
+        CARD.classList.remove("red");
+    } else if  ( currentCardSuit == "heart" || currentCardSuit == "diamond") {
+        CARD.classList.remove("black");
+        CARD.classList.add("red");
+    }
+
 })
 
 // Function to shuffle the deck of cards using Fisher-Yates Shuffle (Knuth Shuffle);
